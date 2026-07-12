@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header1"></h1>
+    <script>
+        var firstNumber = window.prompt("Enter first number: ");
+        var secondNumber = window.prompt("Enter second number: ");
+        sum = +firstNumber + +secondNumber;
+        multiply = +firstNumber * +secondNumber;
+        division = +firstNumber / +secondNumber;
+        subtract = +firstNumber - +secondNumber;
+window.document.getElementById("header1").innerHTML = 
+            firstNumber + " + " + secondNumber + " = " + sum + "<br>" +
+            firstNumber + " - " + secondNumber + " = " + subtract + "<br>" +
+            firstNumber + " * " + secondNumber + " = " + multiply + "<br>" +
+            firstNumber + " / " + secondNumber + " = " + division;
+    </script>
+</body>
+</html>
