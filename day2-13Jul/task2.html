@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Evaluation</title>
+</head>
+<body>
+
+    <h2>Employee Evaluation summary</h2>
+
+    <div id="result"></div>
+
+    <script>
+        // 1-a
+        var name = prompt("Enter employee name:");
+        var age = Number(prompt("Enter employee age:"));
+        var yearsOfExperience = Number(prompt("Enter years of experience:"));
+        // 1-b
+        var selfRating = Number(prompt("Enter self-rating (1 - 10):"));
+
+        var baseSalary = Number(prompt("Enter base salary:"));
+
+        // 2
+        var jobCategory;
+
+        if (yearsOfExperience < 2) {
+            jobCategory = "Junior";
+        }
+        else if (yearsOfExperience >= 2 && yearsOfExperience <= 5) {
+            jobCategory = "Mid-Level";
+        }
+        else if (yearsOfExperience > 5 && yearsOfExperience <= 10) {
+            jobCategory = "Senior";
+        }
+        else {
+            jobCategory = "Expert";
+        }
+
+        // 3
+        var performance;
+
+        switch (true) {
+            case (selfRating >= 9):
+                performance = "Excellent";
+                break;
+
+            case (selfRating >= 7):
+                performance = "Good";
+                break;
+
+            case (selfRating >= 5):
+                performance = "Average";
+                break;
+
+            default:
+                performance = "Needs Improvement";
+        }
+
+        // 4
+        var bonus;
+
+        if (yearsOfExperience >= 0 && yearsOfExperience <= 2) {
+            bonus = baseSalary * 0.10;
+        }
+        else if (yearsOfExperience >= 3 && yearsOfExperience <= 5) {
+            bonus = baseSalary * 0.15;
+        }
+        else {
+            bonus = baseSalary * 0.20;
+        }
+
+        var finalSalary = baseSalary + bonus;
+
+        // 5
+        var currentHour = new Date().getHours();
+        var shift;
+
+        if (currentHour >= 9 && currentHour < 18) {
+            shift = "Day Shift";
+        }
+        else {
+            shift = "Night Shift";
+        }
+
+        // 6
+        var summary =
+            "Name: " + name + "\n" +
+            "Age: " + age + "\n" +
+            "Years of Experience: " + yearsOfExperience + "\n" +
+            "Job Category: " + jobCategory + "\n" +
+            "Self Rating: " + selfRating + "\n" +
+            "Performance: " + performance + "\n" +
+            "Base Salary: " + baseSalary + "\n" +
+            "Bonus: " + bonus + "\n" +
+            "Final Salary: " + finalSalary + "\n" +
+            "Shift: " + shift;
+
+        // Console
+        console.log(summary);
+
+        // Alert
+        alert(summary);
+
+        // DOM
+        document.getElementById("result").innerHTML =
+            "<h3>Employee summary</h3>" +
+            "<p><strong>Name:</strong> " + name + "</p>" +
+            "<p><strong>Age:</strong> " + age + "</p>" +
+            "<p><strong>Years of Experience:</strong> " + yearsOfExperience + "</p>" +
+            "<p><strong>Job Category:</strong> " + jobCategory + "</p>" +
+            "<p><strong>Self Rating:</strong> " + selfRating + "</p>" +
+            "<p><strong>Performance:</strong> " + performance + "</p>" +
+            "<p><strong>Base Salary:</strong> " + baseSalary + "</p>" +
+            "<p><strong>Bonus:</strong> " + bonus + "</p>" +
+            "<p><strong>Final Salary:</strong> " + finalSalary + "</p>" +
+            "<p><strong>Shift:</strong> " + shift + "</p>";
+
+    </script>
+
+</body>
+</html>
