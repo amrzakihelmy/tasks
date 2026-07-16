@@ -1,3 +1,22 @@
+//bonus question
+var users = [
+    { name: "Ali", city: "CAI" },
+    { name: "Sara", city: "GZA" },
+    { name: "Mona", city: "CAI" }
+];
+
+var byCity = {};
+
+for (var user of users) {
+    if (!byCity[user.city]) {
+        byCity[user.city] = [];
+    }
+
+    byCity[user.city].push(user);
+}
+
+console.log(byCity);
+
 //1
 var car = {
     brand: "Mazda",
