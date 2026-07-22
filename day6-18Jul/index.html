@@ -3,84 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Register</title>
-<link rel="stylesheet" href="style.css">
+<title>CRUD Users</title>
 </head>
 <body>
 
-<div class="page">
+<input type="text" id="fname" placeholder="First Name">
+<input type="text" id="lname" placeholder="Last Name">
+<input type="number" id="age" placeholder="Age">
 
-  <header class="masthead">
-    <h1>Student Register</h1>
-    <span class="tagline">CRUD</span>
-  </header>
+<label>Graduated:</label>
+<select id="isGraduated">
+  <option value="true">Yes</option>
+  <option value="false">No</option>
+</select>
 
-  <section class="card">
-    <h2><span class="step">Entry</span> Add / Update Student</h2>
-    <div class="form-grid">
-      <div class="field">
-        <label for="fname">First name</label>
-        <input type="text" id="fname" placeholder="e.g. Amr">
-      </div>
-      <div class="field">
-        <label for="lname">Last name</label>
-        <input type="text" id="lname" placeholder="e.g. Hassan">
-      </div>
-      <div class="field">
-        <label for="age">Age</label>
-        <input type="number" id="age" placeholder="20">
-      </div>
-      <div class="field">
-        <label for="isGraduated">Graduated</label>
-        <select id="isGraduated">
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select>
-      </div>
-    </div>
-    <div style="margin-top: 16px;">
-      <button id="btn">Add User</button>
-    </div>
-  </section>
+<button id="btn">Add User</button>
 
-  <section class="card">
-    <h2><span class="step">Filter</span> Search Records</h2>
-    <div class="filter-bar">
-      <div class="field">
-        <label for="searchFirst">First name</label>
-        <input type="text" id="searchFirst" placeholder="Search first name">
-      </div>
-      <div class="field">
-        <label for="searchLast">Last name</label>
-        <input type="text" id="searchLast" placeholder="Search last name">
-      </div>
-      <div class="field">
-        <label for="graduationFilter">Status</label>
-        <select id="graduationFilter">
-          <option value="all">All</option>
-          <option value="true">Graduated</option>
-          <option value="false">Ungraduated</option>
-        </select>
-      </div>
-    </div>
-  </section>
+<hr>
 
-  <div class="ledger-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Age</th>
-          <th>Graduated</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
-  </div>
+<input type="text" id="searchFirst" placeholder="Search First Name">
+<input type="text" id="searchLast" placeholder="Search Last Name">
 
-</div>
+<select id="graduationFilter">
+  <option value="all">All</option>
+  <option value="true">Graduated</option>
+  <option value="false">Ungraduated</option>
+</select>
+
+<hr>
+
+<table border="1">
+<thead>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Age</th>
+<th>Graduated</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
 
 <script src="main.js"></script>
 </body>

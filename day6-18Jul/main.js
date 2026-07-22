@@ -44,8 +44,6 @@ function displayUsers() {
     let lastNameSearch = searchLast.value.toLowerCase();
     let graduatedFilter = graduationFilter.value;
 
-    let visibleCount = 0;
-
     for (let i = 0; i < arrayOfUsers.length; i++) {
 
         let user = arrayOfUsers[i];
@@ -62,30 +60,17 @@ function displayUsers() {
         )
             continue;
 
-        visibleCount++;
-
-        let stampClass = user.isGraduated ? "yes" : "no";
-        let stampText = user.isGraduated ? "Yes" : "No";
-
         table += `
             <tr>
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.age}</td>
-                <td><span class="stamp ${stampClass}">${stampText}</span></td>
+                <td>${user.isGraduated}</td>
 
                 <td>
-                    <button class="btn-edit" onclick="updateUser(${i})">Edit</button>
-                    <button class="btn-delete" onclick="deleteUser(${i})">Delete</button>
+                    <button onclick="updateUser(${i})">Update</button>
+                    <button onclick="deleteUser(${i})">Delete</button>
                 </td>
-            </tr>
-        `;
-    }
-
-    if (visibleCount === 0) {
-        table = `
-            <tr class="empty-row">
-                <td colspan="5">No records match — add a student above or adjust your filters.</td>
             </tr>
         `;
     }
@@ -172,6 +157,3 @@ btn.addEventListener("click", () => {
     age.value = "";
     isGraduated.value = "true";
 });
-
-// Show the empty state on first load
-displayUsers();
